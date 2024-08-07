@@ -4,6 +4,11 @@ using namespace std;
 
 int main()
 {
-    cout << "Hola mundo 2";
+    int numero;
+    cout << "MI PRIMER PROGRAMA" << endl;
+    cout << "==================" << endl;
+    cout << "Ingrese un numero: ";
+    cin >> numero;
+    cout << "El numero ingresado es: " << numero;
     return 0;
 }

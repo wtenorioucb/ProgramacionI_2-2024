@@ -12,8 +12,8 @@ int main()
 {
     int numero;
     system("cls"); // Limpiar Pantalla
-    cout << "MI PRIMER PROGRAMA\n";
-    cout << "==================" << endl;
+    cout << "MI PRIMER PROGRAMA (Version 2)\n";
+    cout << "==============================" << endl;
     cout << "\tIngrese un numero: ";
     cin >> numero;
     cout << "\tEl numero ingresado es: " << numero;

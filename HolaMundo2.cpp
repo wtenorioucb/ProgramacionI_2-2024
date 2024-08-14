@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
     system("cls"); // Limpiar pantalla
-    cout << "Hola mundo 2.\n";
+    cout << "Hola mundo 2." << endl ;
     system("pause");
     return 0;
 }

@@ -8,8 +8,8 @@ using namespace std;
 
 int main()
 {
-    system("cls");
-    cout << "Hola mundo.\n";
+    system("cls"); // Limpiar pantalla
+    cout << "Hola mundo 2.\n";
     system("pause");
     return 0;
 }

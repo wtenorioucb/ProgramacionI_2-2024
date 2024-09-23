@@ -27,12 +27,15 @@ int main()
 int IngresoCantidad()
 {
     int n;
+    int intentos = 0;
     do
     {
         system("cls");
         cout << "¿Cuántos productos desea comprar?: ";
         cin >> n;
-    } while (n <= 0);
+        intentos++;
+    } while (n <= 0 && intentos <= 5);
+    
     return n;
 }
 

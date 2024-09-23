@@ -5,6 +5,7 @@ using namespace std;
 
 int main()
 {
+    int j = 0;
     // Vector sin inicializar ni indicar tamaño
     vector<double> arreglo_1;
     // Vector con tamaño 5 y componentes inicilizadas
@@ -12,10 +13,10 @@ int main()
     system("cls");
     cout << "MOSTRAR DATOS VECTOR CON FOR NORMAL" << endl;
     cout << "===================================" << endl;
-    for(int i=0;i<arreglo_2.size();i++) // Con el mtodo .size() se obtiene el tamaño del vector
+    for(int i = 0; i < arreglo_2.size(); i++) // Con el mtodo .size() se obtiene el tamaño del vector
     {
         // Mostrar las componentes con un ciclo
-        cout << arreglo_2[i] << endl;
+        cout << "Elemento " << i << ": " << arreglo_2[i] << endl;
     }
     arreglo_1 = arreglo_2;
     arreglo_1.resize(10);
@@ -23,7 +24,8 @@ int main()
     cout << "=================================" << endl;
     for(auto valor : arreglo_1)
     {
-        cout << valor << endl;
+        cout << "Elemento " << j << ": " << valor << endl;
+        j++;
     }
     cout << "MOSTRAR DATOS VECTOR BORRANDO ELEMENTOS" << endl;
     cout << "=======================================" << endl;

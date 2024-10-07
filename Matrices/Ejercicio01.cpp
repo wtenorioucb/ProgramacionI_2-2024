@@ -44,46 +44,58 @@ void Jugar(char matriz[3][3])
     int nro_jugadas = 0;
     int fila = 0;
     int columna = 0;
+    bool sw;
     do
     {
+        sw = true;
         nro_jugadas++;
-        if (nro_jugadas % 2 == 0) // Jugador 1
+        if (nro_jugadas % 2 != 0) // Jugador 1
         {   
             do
             {
                 system("cls");
+                MostrarMartriz(matriz);
                 cout << "JUGADOR 1" << endl; 
                 cout << "Ingrese la fila: ";
                 cin >> fila;
                 cout << "Ingrese la columna: ";
                 cin >> columna;
-                if (matriz[fila][columna] != '-')
+                if (matriz[fila][columna] == '-')
                 {
-                    cout << "Casilla ocupada, ingrese una casilla vacia.";
+                    matriz[fila][columna] = 'O';
+                    sw = false;
+                }
+                else
+                {
+                    cout << "Casilla ocupada, ingrese una casilla vacia." << endl;
+                    MostrarMartriz(matriz);
                     system("pause");
                 }
-            } while (matriz[fila][columna] == '-');
-            matriz[fila][columna] = 'O';
+            } while (sw);
         }
         else // Jugador 2
         {
-            system("cls");
             do
             {
+                system("cls");
+                MostrarMartriz(matriz);
                 cout << "JUGADOR 2" << endl; 
                 cout << "Ingrese la fila: ";
                 cin >> fila;
                 cout << "Ingrese la columna: ";
                 cin >> columna;
-                if (matriz[fila][columna] != '-')
+                if (matriz[fila][columna] == '-')
                 {
-                    cout << "Casilla ocupada, ingrese una casilla vacia.";
+                    matriz[fila][columna] = 'X';
+                    sw = false;
+                }
+                else
+                {
+                    cout << "Casilla ocupada, ingrese una casilla vacia." << endl;
+                    MostrarMartriz(matriz);
                     system("pause");
                 }
-            } while (matriz[fila][columna] == '-');
-            matriz[fila][columna] = 'X';
+            } while (sw);
         }
-        MostrarMartriz(matriz);
-        system("pause");
     } while (nro_jugadas <= 9);   
 }

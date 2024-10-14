@@ -87,6 +87,7 @@ void Jugar(char matriz[3][3])
                 system("cls");
                 MostrarMartriz(matriz);
                 cout << "JUGADOR 2" << endl; 
+                cout << "Nro jugadas: " << nro_jugadas << endl;
                 cout << "Ingrese la fila: ";
                 cin >> fila;
                 cout << "Ingrese la columna: ";

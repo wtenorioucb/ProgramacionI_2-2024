@@ -1,8 +1,10 @@
 #include <iostream>
-// Libreria para elmanejo de Archivos
-#include <fstream>
-#include <cstring>
 #include <string>
+#include <cstring>
+#include <algorithm>
+
+// Libreria para el manejo de Archivos
+#include <fstream>
 
 using namespace std;
 
@@ -13,31 +15,71 @@ struct structEstudiante
     char nombres[30];
     char apellidos[30];
     char materia[50];
-    int nota;
+    char nota[3];
 };
 
 structEstudiante ingresarDatosEstudiante();
 void adicionarDatosArchivo(structEstudiante);
 void leerDatosEstudiante();
+void MenuPrincipal();
+void SeleccionarOpcionMenu();
 
 int main()
 {
-    //adicionarDatosArchivo(ingresarDatosEstudiante());
-    leerDatosEstudiante();
+    SeleccionarOpcionMenu();
     return 0;
+}
+
+void MenuPrincipal()
+{
+    system("cls");
+    cout << "\tMENU PRINCIPAL" << endl;
+    cout << "==========================" << endl;
+    cout << "\t1. Ingresar Datos estudiante" << endl;
+    cout << "\t2. Leer Archivo" << endl;
+    cout << "\t0. SALIR" << endl;
+}
+
+void SeleccionarOpcionMenu()
+{
+    int opcion = 0;
+    do
+    {
+        MenuPrincipal();
+        cout << "Seleccione una opcion:";
+        cin >> opcion;
+        switch (opcion)
+        {
+            case 0:
+                break;
+            case 1:
+                adicionarDatosArchivo(ingresarDatosEstudiante());
+                system("pause");
+                break;
+            case 2:
+                leerDatosEstudiante();
+                system("pause");
+                break;
+            default:
+                cout << "USTED NO HA SELECCIONADO NINGUNA OPCION" << endl;
+                system("pause");
+                break;
+        }
+    } while (opcion != 0);
 }
 
 structEstudiante ingresarDatosEstudiante()
 {
     structEstudiante estudiante;
     cout << "Ingresar nombre del estudiante: ";
+    cin.ignore();
     cin.getline(estudiante.nombres, 30);
-    cout << "Ingresar nombre del estudiante: ";
+    cout << "Ingresar apellidos del estudiante: ";
     cin.getline(estudiante.apellidos, 30);
     cout << "Ingresar nombre de la materia: ";
     cin.getline(estudiante.materia, 50);
-    cout << "Ingresar nombre del estudiante: ";
-    cin >> estudiante.nota;
+    cout << "Ingresar la nota: ";
+    cin.getline(estudiante.nota, 3);
     return estudiante;
 }
 
@@ -51,13 +93,12 @@ void adicionarDatosArchivo(structEstudiante estudiante)
 
 void leerDatosEstudiante()
 {
+    system("cls");
     ifstream archivo;
     string lineaTexto;
     string aux;
-    string::size_type sz;
     int pos = 0;
     structEstudiante estudiante;
-
     archivo.open(NOMBRE_ARCHIVO);
     if (archivo.good())
     {
@@ -84,7 +125,7 @@ void leerDatosEstudiante()
             pos = lineaTexto.find(';') + 1;
             lineaTexto.erase(0,pos);
             aux = lineaTexto.substr(0, lineaTexto.find(';'));
-            estudiante.nota = aux;
+            strncpy(estudiante.nota, aux.c_str(), 3);
             cout << estudiante.nota << endl;
         }
     }

@@ -7,7 +7,10 @@
     "string_view": "cpp",
     "initializer_list": "cpp",
     "format": "cpp",
-    "iosfwd": "cpp"
+    "iosfwd": "cpp",
+    "fstream": "cpp",
+    "*.tcc": "cpp",
+    "istream": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",

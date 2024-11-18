@@ -39,7 +39,7 @@ void leerArchivo()
     cout << "\tNombre: " << agenda.nombre << endl;
     cout << "\tCelular: " << agenda.celular << endl << endl;
     cout << "Ubicacion Final: " << archivoLectura.tellg() << endl << endl;
-    cout << "Tamaño: " << sizeof(structAgenda) << endl;
+    cout << "TamaÃ±o: " << sizeof(structAgenda) << endl;
     archivoLectura.close();
 }
 

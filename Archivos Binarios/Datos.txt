@@ -1,0 +1,3 @@
+Willy;40
+Juan;20
+Eduardo;15
